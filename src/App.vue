@@ -476,9 +476,7 @@ export default {
   },
   mounted: async function() {
     this.location = "New York";
-    await this.organizeAllDetails();
-    console.log(this.tempVar.tempToday);
-    
+    await this.organizeAllDetails();     
   }
 };
 </script>
