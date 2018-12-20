@@ -1,5 +1,5 @@
 <template>
-  <div class="highlights-item col-md-4 col-sm-6 col-xs-12 border-left border-right">
+  <div class="highlights-item col-md-4 col-sm-6 col-xs-12 border-left border-right border-top">
     <div>
       <fusioncharts
         :type="type"
@@ -33,7 +33,6 @@ export default {
           caption: "Air Visibility",
           captionFontBold: "0",
           captionFontColor: "#000000",
-          chartTopMargin: "10",
           baseFont: "Roboto",
           numberSuffix: " km",
           lowerLimit: "0",
@@ -47,7 +46,10 @@ export default {
           valueFontSize: "20",
           valueFontColor: "#000000",
           valueFontBold: "1",
-          pointerBorderAlpha: "0"
+          pointerBorderAlpha: "0",
+          chartBottomMargin: "40",
+          captionPadding: "30",
+          chartTopMargin: "30"
         },
         colorRange: {
           color: [

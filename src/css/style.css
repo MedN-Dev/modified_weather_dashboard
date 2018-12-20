@@ -52,6 +52,7 @@ body {
     color: #ffffff;
     font-size: 8rem;
     line-height: 106px;
+    position: relative;
 }
 
 #current-weather>span {
@@ -60,6 +61,8 @@ body {
     line-height: 42px;
     vertical-align: super;
     opacity: 0.8;
+    top: 15px;
+    position: absolute;
 }
 
 #weather-desc {
@@ -194,11 +197,11 @@ body {
 }
 
 .header-card {
-    height: 35vh;
+    height: 50vh;
 }
 
 .content-card {
-    height: 58vh;
+    height: 43vh;
 }
 
 .card-divider {
@@ -214,9 +217,11 @@ body {
 }
 
 .highlights-item {
-    min-height: 26vh;
-    max-height: 26vh;
+    min-height: 37vh;
+    max-height: 38vh;
+    background-color: #FFFFFF;
 }
+
 
 .card-heading {
     color: rgb(33, 34, 68);
@@ -240,6 +245,14 @@ body {
 
 span text {
     font-weight: 500 !important;
+}
+
+hr {
+    padding-top: 1.5px;
+    padding-bottom: 1px;
+    margin-bottom: 0;
+    margin-top: 0;
+    line-height: 0.5px;
 }
 
 @media only screen and (min-width: 768px) {

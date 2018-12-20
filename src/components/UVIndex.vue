@@ -1,15 +1,14 @@
 <template>
-  <div class="highlights-item col-md-4 col-sm-6 col-xs-12">
+  <div class="highlights-item col-md-4 col-sm-6 col-xs-12 border-top">
     <div>
-    <fusioncharts
-      :type="type"
-      :width="width"
-      :height="height"
-      :containerbackgroundopacity="containerbackgroundopacity"
-      :dataformat="dataformat"
-      :datasource="datasource"
-    >
-    </fusioncharts>
+      <fusioncharts
+        :type="type"
+        :width="width"
+        :height="height"
+        :containerbackgroundopacity="containerbackgroundopacity"
+        :dataformat="dataformat"
+        :datasource="datasource"
+      ></fusioncharts>
     </div>
   </div>
 </template>
@@ -30,19 +29,18 @@ export default {
           caption: "UV Index",
           captionFontBold: "0",
           captionFontColor: "#000000",
-          chartTopMargin: "10",
-          captionPadding: "20",
+          captionPadding: "30",
           lowerLimit: "0",
           upperLimit: "15",
           lowerLimitDisplay: "1",
           upperLimitDisplay: "1",
-          showValue: "1",
+          showValue: "0",
           theme: "fusion",
           baseFont: "Roboto",
           bgAlpha: "0",
           canvasbgAlpha: "0",
-          gaugeInnerRadius: "65",
-          gaugeOuterRadius: "85",
+          gaugeInnerRadius: "75",
+          gaugeOuterRadius: "110",
           pivotRadius: "0",
           pivotFillAlpha: "0",
           valueFontSize: "20",
@@ -50,7 +48,9 @@ export default {
           valueFontBold: "1",
           tickValueDistance: "3",
           autoAlignTickValues: "1",
-          majorTMAlpha: "20"
+          majorTMAlpha: "20",
+          chartTopMargin: "30",
+          chartBottomMargin: "40"
         },
         colorrange: {
           color: [
@@ -63,6 +63,25 @@ export default {
               minvalue: this.highlights.uvIndex.toString(),
               maxvalue: "15",
               code: "#D8EDFF"
+            }
+          ]
+        },
+        annotations: {
+          groups: [
+            {
+              items: [
+                {
+                  id: "val-label",
+                  type: "text",
+                  text: this.highlights.uvIndex.toString(),
+                  fontSize: "20",
+                  font: "Source Sans Pro",
+                  fontBold: "1",
+                  fillcolor: "#212529",
+                  x: "$gaugeCenterX",
+                  y: "$gaugeCenterY"
+                }
+              ]
             }
           ]
         },
@@ -85,10 +104,9 @@ export default {
   watch: {
     highlights: {
       handler: function() {
-        this.datasource.dials.dial.value = this.highlights.uvIndex.toString();
         this.datasource.colorrange.color[0].maxvalue = this.highlights.uvIndex.toString();
         this.datasource.colorrange.color[1].minvalue = this.highlights.uvIndex.toString();
-        this.datasource.dials.dial.value = this.highlights.uvIndex.toString();
+        this.datasource.annotations.groups[0].items[0].text = this.highlights.uvIndex.toString();
       },
       deep: true
     }

@@ -57,7 +57,7 @@
                     style="opacity: 0.9;"
                   >
                   {{ currentWeather.full_location }}
-                  <div id="location-detail">
+                  <div id="location-detail" class="mt-1">
                     Lat: {{ currentWeather.formatted_lat }}
                     <br>
                     Long: {{ currentWeather.formatted_long }}
