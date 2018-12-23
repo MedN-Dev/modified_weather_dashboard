@@ -12,8 +12,6 @@ PowerCharts(FusionCharts);
 Widgets(FusionCharts);
 FusionTheme(FusionCharts);
 
-FusionCharts.options.creditLabel = false;
-
 Vue.use(VueFusionCharts, FusionCharts);
 
 new Vue({

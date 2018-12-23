@@ -238,6 +238,7 @@ export default {
       this.makeInputEmpty();
       this.makeTempVarTodayEmpty();
     },
+    
     getCoordinates: function() {
       this.locationEntered();
       var loc = this.location;
@@ -466,6 +467,7 @@ export default {
       this.getSetWindStatus();
     },
 
+    // topmost level orchestration
     organizeAllDetails: async function() {
       // top level organization
       await this.fetchWeatherData();
